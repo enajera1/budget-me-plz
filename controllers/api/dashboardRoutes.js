@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Bills, User } = require("../../Models/index");
+const { Bills, User } = require("../../models/index");
 
 const bcrypt = require("bcrypt");
 
