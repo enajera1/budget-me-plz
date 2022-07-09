@@ -1,10 +1,10 @@
 const router = require('express').Router();
-// const { user } = require('../../Models');
-const user = require("../../models/user");
+const { User } = require('../../Models');
+// const user = require("../../models/user");
 
 
 router.post('/', (req, res) => {
-  user.create({
+  User.create({
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     email: req.body.email,
@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
 }); 
 
 router.get('/', (req, res) => {
-  user.findAll()
+  User.findAll()
   .then(dbUserData => res.json(dbUserData))
   .catch(err => {
       console.log(err); 

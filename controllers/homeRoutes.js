@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { User, Bills, Accounts, Debt, Cards } = require("../models/index");
-const user = require("../models/user");
+// const user = require("../models/User");
 const withAuth = require("../utils/auth");
 
 router.get("/", async(req, res) => {
@@ -47,7 +47,7 @@ router.get("/login", (req, res) => {
 router.get('/dashboard', withAuth, (req, res) => {
     console.log(req.session);
     console.log('--------------');
-    user.findAll({
+    User.findAll({
         where: {
             user_id: req.session.user_id
         },
